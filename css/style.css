@@ -15,14 +15,15 @@
   --status-font-family: 'Courier New', Courier, monospace;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-  --square-font-size: 5rem;
+  --square-font-size-xl: 6rem;
+  --square-font-size-sm: 4rem;
   --button-font-size: 1.5rem;
   --h1-font-size: 2.5rem;
 
   /* Mise en page */
   --board-width-min: 300px;
   --board-width-max: 600px;
-  --board-radius: 1rem;
+  --board-radius: calc((var(--board-padding) + var(--square-radius)) / 2);
   --board-padding: 1.5rem;
   --gap: 1rem;
   --square-radius: 0.5rem;
@@ -81,7 +82,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--square-font-size);
+  font-size: var(--square-font-size-xl);
   font-weight: var(--font-weight-bold);
   aspect-ratio: 1 / 1;
   box-shadow: var(--shadow);
@@ -89,6 +90,12 @@ main {
   cursor: pointer;
   user-select: none;
   transition: outline .1s;
+}
+
+@media (max-width: 600px) {
+  .board li {
+    font-size: var(--square-font-size-sm);
+  }
 }
 
 .board li:hover {

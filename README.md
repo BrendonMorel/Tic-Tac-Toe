@@ -22,4 +22,6 @@ Ce projet est un simple jeu de Tic-Tac-Toe que j'ai développé pour m'amuser. L
 
 Cliquez sur une case pour y placer votre symbole (X ou O). Le jeu détectera automatiquement les victoires ou les égalités. Pour recommencer une partie, rechargez la page ou cliquez sur le bouton "Effacer".
 
-### Amusez-vous ! 😊
+## Amusez-vous ! 😊
+
+__Démo : https://brendonmorel.ca/projects/tictactoe/__
