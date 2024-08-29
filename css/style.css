@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Variables globales */
+:root {
+  /* Couleurs */
+  --bg-color: #303A2B;
+  --white-color: #fff;
+  --font-color: #f38541;
+  --status-color: #fff;
+  --link-color: #464e42;
+  --board-bg: #fff;
+
+  /* Typographie */
+  --font-family: "Inter", sans-serif;
+  --status-font-family: 'Courier New', Courier, monospace;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --square-font-size: 5rem;
+  --button-font-size: 1.5rem;
+  --h1-font-size: 2.5rem;
+
+  /* Mise en page */
+  --board-width-min: 300px;
+  --board-width-max: 600px;
+  --board-radius: 1rem;
+  --board-padding: 1.5rem;
+  --gap: 1rem;
+  --square-radius: 0.5rem;
+  --button-padding: 0.75rem 1.25rem;
+
+  /* Ombre */
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --shadow-hover: var(--bg-color) 0px 2px 8px 0px;
+}
+
+/* Réinitialisation et style global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family);
+  color: var(--font-color);
+  list-style: none;
+}
+
+/* Structure de la page */
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+main {
+  width: 100%;
+  min-width: var(--board-width-min);
+  max-width: var(--board-width-max);
+}
+
+/* Styles du plateau de jeu */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: var(--board-radius);
+  padding: var(--board-padding);
+  box-shadow: var(--shadow);
+  background-color: var(--board-bg);
+}
+
+.board li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--square-font-size);
+  font-weight: var(--font-weight-bold);
+  aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow);
+  border-radius: var(--square-radius);
+  cursor: pointer;
+  user-select: none;
+  transition: outline .1s;
+}
+
+.board li:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.winning-square {
+  border: 2px dashed var(--bg-color);
+}
+
+/* Boutons */
+button {
+  border: none;
+  background-color: var(--font-color);
+  color: var(--white-color);
+  font-size: var(--button-font-size);
+  padding: var(--button-padding);
+  border-radius: var(--square-radius);
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color .1s;
+}
+
+button:hover {
+  background-color: var(--white-color);
+  color: var(--font-color);
+}
+
+/* Titres et texte */
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+h2 {
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+#status {
+  font-family: var(--status-font-family);
+  color: var(--status-color);
+  margin-top: 1rem;
+}
+
+/* Liens */
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--link-color);
+}
