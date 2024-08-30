@@ -15,14 +15,14 @@
   --status-font-family: 'Courier New', Courier, monospace;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-  --square-font-size-xl: 6rem;
-  --square-font-size-sm: 4rem;
+  --square-font-size-xl: 5rem;
+  --square-font-size-sm: 3.5rem;
   --button-font-size: 1.5rem;
   --h1-font-size: 2.5rem;
 
   /* Mise en page */
-  --board-width-min: 300px;
-  --board-width-max: 600px;
+  --board-width-min: 60vh;
+  --board-width-max: 25vw;
   --board-radius: calc((var(--board-padding) + var(--square-radius)) / 2);
   --board-padding: 1.5rem;
   --gap: 1rem;
@@ -56,11 +56,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+  gap: var(--gap);
 }
 
 main {
-  width: 100%;
   min-width: var(--board-width-min);
   max-width: var(--board-width-max);
 }
@@ -71,7 +71,6 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
   aspect-ratio: 1 / 1;
-  width: 100%;
   border-radius: var(--board-radius);
   padding: var(--board-padding);
   box-shadow: var(--shadow);
@@ -92,9 +91,9 @@ main {
   transition: outline .1s;
 }
 
-@media (max-width: 600px) {
-  .board li {
-    font-size: var(--square-font-size-sm);
+@media (max-width: 650px) {
+  :root {
+    --board-width-min: 80vw;
   }
 }
 
